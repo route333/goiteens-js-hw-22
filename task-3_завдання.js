@@ -1,20 +1,21 @@
-function Storage(items) {
-  this.items = items;
-}
+const Storage = function (itemsArr) {
+  this.items = itemsArr;
 
-Storage.prototype.getItems = function () {
-  return this.items;
-};
+  this.getItems = function (items) {
+    return this.items;
+  };
 
-Storage.prototype.addItem = function (item) {
-  this.items.push(item);
-};
+  this.addItem = function (item) {
+    this.items.push(item);
+  };
 
-Storage.prototype.removeItem = function (item) {
-  const indexItems = this.items.indexOf(item);
-  if (indexItems !== -1) {
-    this.items.splice(indexItems, 1);
-  }
+  this.removeItem = function (arrItem) {
+    this.items.reduce((item, items) => {
+      if (items === arrItem) {
+        return item;
+      }
+    }, []);
+  };
 };
 
 const storage = new Storage([

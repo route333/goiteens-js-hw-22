@@ -1,4 +1,4 @@
-function User({ name, age, followers }) {
+const User = function ({ name, age, followers }) {
   this.name = name;
   this.age = age;
   this.followers = followers;
