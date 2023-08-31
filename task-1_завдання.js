@@ -1,12 +1,11 @@
 const Account = function ({ login, email }) {
   this.login = login;
   this.email = email;
-
-  this.getInfo = function (login, email) {
-    console.log(`login: ${this.login} email: ${this.email}`);
-  };
 }
 
+Account.prototype.getInfo = function (login, email) {
+  console.log(`login: ${this.login} email: ${this.email}`);
+};
 
 console.log(Account.prototype.getInfo); // function
 const mango = new Account({
